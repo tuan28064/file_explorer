@@ -1,0 +1,42 @@
+{
+  "productName": "file-explorer",
+  "version": "0.1.0",
+  "identifier": "com.example.fileexplorer",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "security": {
+      "csp": null,
+      "capabilities": [
+        {
+          "identifier": "main-capability",
+          "description": "Main window capabilities",
+          "windows": ["main"],
+          "permissions": [
+            "dialog:allow-open",
+            "fs:allow-read-dir",
+            "fs:allow-read-file",
+            "fs:default"
+          ]
+        }
+      ]
+    },
+    "windows": [
+      {
+        "title": "File Explorer",
+        "width": 900,
+        "height": 700,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all"
+  }
+}
